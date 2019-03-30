@@ -4,7 +4,7 @@ description: 树莓派还是需要调教一下的 ~
 
 # 让你的树莓派更加懂你
 
-## 启动 vnc 
+## 启动 vnc
 
 ```bash
 sudo raspi-config
@@ -13,7 +13,7 @@ sudo raspi-config
 
 这样就可以通过vnc登录树莓派了
 
-{% embed url="https://www.realvnc.com/en/connect/download/viewer/" %}
+{% embed url="https://www.realvnc.com/en/connect/download/viewer/" caption="" %}
 
 ![&#x6811;&#x8393;&#x6D3E;&#x7684;&#x7B2C;&#x4E00;&#x9762;](.gitbook/assets/wei-ming-ming-2.png)
 
@@ -34,15 +34,13 @@ sudo apt-get update
 
 ## 让你的树莓派和你保持时间同步\(矫正时间\)
 
-
-
 * 树莓派矫正时间
 * `sudo dpkg-reconfigure tzdata` 选择 Asian -&gt; Shanghai 完成时区更改
 * `sudo apt-get install ntp` 安装时间校准服务 
 
-特别鸣谢 : 
+特别鸣谢 :
 
-{% embed url="http://www.ntp.org.cn/" %}
+{% embed url="http://www.ntp.org.cn/" caption="" %}
 
 ```bash
 sudo ntpd -s -d
@@ -72,7 +70,7 @@ sudo vi /etc/rsyslog.conf
 # cron.*             /var/log/cron.log
 ```
 
- 重启 rsyslog   `sudo service rsyslog restart` 
+重启 rsyslog `sudo service rsyslog restart`
 
 然后 cron 的执行 log 就会出现在 /var/log/cron.log
 
@@ -81,7 +79,9 @@ sudo vi /etc/rsyslog.conf
 ```bash
 sudo apt-get install lrzsz
 ```
+
 ## 别忘了升级到 vim
+
 ```bash
 sudo apt-get install vim
 sudo select-editor
@@ -94,3 +94,4 @@ sudo select-editor
 #
 # Choose 1-4 [2]: 4
 ```
+
