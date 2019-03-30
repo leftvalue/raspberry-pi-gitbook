@@ -17,12 +17,55 @@ sudo systemctl enable influxdb
 sudo service influxdb start
 ```
 
+之后可以执行命令测试是否启动成功
+
+```bash
+curl -G http://localhost:8086/query --data-urlencode "q=show databases"
+```
+期望得到类似的返回
+
+```json
+{"results":[{"statement_id":0,"series":[{"name":"databases","columns":["name"],"values":[["_internal"],["telegraf"]]}]}]}
+```
+
 ## telegraf
 ```bash
 wget https://dl.influxdata.com/telegraf/nightlies/telegraf_nightly_armhf.deb
 sudo dpkg -i telegraf_nightly_armhf.deb
 sudo service telegraf start
 sudo systemctl enable telegraf
+```
+
+默认配置文件位于
+
+> /etc/telegraf/telegraf.conf
+
+需要进行几点小更改
+```
+## Multiple URLs can be specified for a single cluster, only ONE of the ## urls will be written to each interval. 
+# urls = ["unix:///var/run/influxdb.sock"] 
+# urls = ["udp://127.0.0.1:8089"] 
+# influxdb http地址，由于是宿主机直接安装，直接访问本地8086端口即可。 
+urls = ["http://127.0.0.1:8086"] 
+database = "telegraf"
+skip_database_creation = false
+timeout = "5s"
+```
+修改之后记得重启服务
+```bash
+# 小贴士
+
+# 启动
+systemctl start telegraf
+
+# 停止
+systemctl stop telegraf
+
+# 重启
+systemctl restart telegraf
+
+# 查看服务状态
+systemctl status telegraf
 ```
 
 ## grafana
@@ -44,7 +87,11 @@ sudo /bin/systemctl start grafana-server
 * Database telegraf
 * User root
 * Password root
+
+Dashboard 官方参考文档
+
 导入 dashboard 
+
 [地址](https://grafana.com/dashboards/928)
 
-大功告成,撒花~
+大功告成,撒花 🎉 🎉 🎉 
