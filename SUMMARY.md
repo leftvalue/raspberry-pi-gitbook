@@ -6,4 +6,5 @@
 * [让树莓派可以从u盘启动](rang-shu-pai-ke-yi-congupan-qi-dong.md)
 * [跨越网络,亲密无间](kua-yue-wang-luo-qin-mi-wu-jian.md)
 * [我想要能看到树莓派的性能监控曲线](wo-xiang-yao-neng-kan-dao-shu-pai-de-xing-neng-jian-kong-qu-xian.md)
+* [Nginx : 让所有服务都配拥有姓名](nginx-rang-suo-you-fu-wu-du-pei-yong-you-xing-ming.md)
 

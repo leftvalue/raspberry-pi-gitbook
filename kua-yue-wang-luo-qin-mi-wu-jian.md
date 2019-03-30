@@ -59,8 +59,9 @@ ssl=0
 
 #ssl=0     ==> http connection
 #ssl=1     ==> https conection
-/etc/init.d/webmin restart
+sudo /etc/init.d/webmin restart
 # # http://192.168.199.200:10000
+# 端口可通过 /etc/webmin/miniserv.conf 的 第一行 port 来更改
 ```
 
 {% hint style="info" %}
