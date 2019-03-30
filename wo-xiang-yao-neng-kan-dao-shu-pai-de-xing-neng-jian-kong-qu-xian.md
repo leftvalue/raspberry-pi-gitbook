@@ -108,5 +108,9 @@ sudo /bin/systemctl start grafana-server
 
 ![&#x70AB;&#x9177;&#x5427;~biubiubiu](.gitbook/assets/wx20190331-004012-2x.png)
 
+设置导入的 dashboard 作为 HomePage
+
+![&#x81EA;&#x5DF1;&#x5BFC;&#x5165;&#x7684;dashboard&#x9700;&#x8981;&#x70B9;&#x4E00;&#x4E0B;&#x53F3;&#x4E0A;&#x89D2;&#x7684;star&#x624D;&#x80FD;&#x51FA;&#x73B0;&#x5728;&#x8FD9;&#x91CC;&#x4E0B;&#x62C9;&#x6846;](.gitbook/assets/wx20190331-023123-2x.png)
+
 大功告成,撒花 🎉 🎉 🎉
 

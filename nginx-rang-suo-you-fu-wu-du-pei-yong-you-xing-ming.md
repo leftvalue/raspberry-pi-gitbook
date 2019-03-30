@@ -28,6 +28,8 @@ sudo /usr/sbin/nginx -t
 
 ## Grafana
 
+{% embed url="https://serverfault.com/questions/684709/how-to-proxy-grafana-with-nginx" %}
+
 ### grafana 配置
 
 ```bash
@@ -68,6 +70,8 @@ sudo /etc/init.d/nginx reload
 ```
 
 ## Webmin
+
+{% embed url="https://serverfault.com/questions/443482/proxying-webmin-with-nginx" %}
 
 ### webmin 配置
 
