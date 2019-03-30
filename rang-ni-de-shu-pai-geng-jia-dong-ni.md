@@ -81,4 +81,16 @@ sudo vi /etc/rsyslog.conf
 ```bash
 sudo apt-get install lrzsz
 ```
+## 别忘了升级到 vim
+```bash
+sudo apt-get install vim
+sudo select-editor
 
+#Select an editor.  To change later, run 'select-editor'.
+# 1. /bin/ed
+# 2. /bin/nano        <---- easiest
+# 3. /usr/bin/vim.basic
+# 4. /usr/bin/vim.tiny
+#
+# Choose 1-4 [2]: 4
+```
