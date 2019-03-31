@@ -18,6 +18,8 @@ $ give something to raspberry-pi
 
 所以,让我们开始吧~
 
+![](.gitbook/assets/42558525-6dd32c62-84e9-11e8-99d2-0281ffe300c3.gif)
+
 ```
 // hero, it's your turn to use the raspberry pi to save the world
 echo 'Hi , Raspberry Pi ~'
