@@ -94,6 +94,8 @@ sudo /etc/init.d/webmin restart
 {% code-tabs-item title="/etc/nginx/conf.d/global.conf" %}
 ```text
 location /webmin/{
+    # 为了能够upload文件,解决 413 Request Entity Too Large
+    client_max_body_size 50m;
     proxy_pass http://127.0.0.1:10000/; 
     proxy_redirect http://$host:10000/ /webmin/;
     # Also fixes initial redirect after login 
@@ -127,7 +129,9 @@ server {
 	}
 
 	location /webmin/{
-    		proxy_pass http://127.0.0.1:10000/;
+			# 为了能够upload文件,解决 413 Request Entity Too Large
+    		client_max_body_size 50m;
+        	proxy_pass http://127.0.0.1:10000/;
     		proxy_redirect http://$host:10000/ /webmin/;
     		# Also fixes initial redirect after login
     		proxy_set_header Host $host;
