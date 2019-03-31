@@ -8,4 +8,5 @@
 * [我想要能看到树莓派的性能监控曲线](wo-xiang-yao-neng-kan-dao-shu-pai-de-xing-neng-jian-kong-qu-xian.md)
 * [Nginx : 让所有服务都配拥有姓名](nginx-rang-suo-you-fu-wu-du-pei-yong-you-xing-ming.md)
 * [Selenium](selenium.md)
+* [Python](python.md)
 
