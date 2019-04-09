@@ -190,3 +190,35 @@ rewrite_log on;
 
 这样在 `error.log` 中就可以看到 `404` 的报错请求的实际转发地址了
 
+## 应用随想
+
+我用 cron 部署了一个简单的清晨闹钟,每早8点开始播放10分钟自然声音.
+
+#### 自然音乐来自 
+
+{% embed url="https://github.com/petrovicstefanrs/chillnsound/tree/master/app/sounds" %}
+
+```bash
+# 尤其注意,这里手动设置了--vol 音量,因为 omxplayer 的播放音量并不受 alsamixer 控制
+# 对了,omxplayer 的音量范围 [-6000,0] ,default 0 (max)
+timeout 300 omxplayer --vol -3000 --loop /home/pi/app/pypi/sounds/birds.mp3
+# cron
+# 0 8 * * *
+```
+
+### 部署任务的时候发现了一个问题
+
+crontab-ui 有时候会因为部署的任务文字编码或者 cron 时间格式问题而导致无法打开,
+
+```bash
+crontab-ui --reset
+```
+
+参见
+
+{% embed url="https://github.com/alseambusher/crontab-ui/blob/master/README/issues.md" %}
+
+另外,crontab-ui 部署的 cron 任务在 `/var/spool/cron/crontabs` 下
+
+
+
