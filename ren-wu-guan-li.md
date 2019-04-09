@@ -220,5 +220,9 @@ crontab-ui --reset
 
 另外,crontab-ui 部署的 cron 任务在 `/var/spool/cron/crontabs` 下
 
+对了,crontab-ui 这玩意有缺陷,无法指定 cron 任务执行的用户,只能以启动 crontab-ui 的时候的用户身份来创建并执行 cron 任务.所以
 
+{% hint style="info" %}
+暂时并不打算继续长期使用 crontab-ui,还是手动的 crontab -e 比较方便
+{% endhint %}
 
