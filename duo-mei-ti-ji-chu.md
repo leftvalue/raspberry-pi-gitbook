@@ -20,6 +20,20 @@ description: 多才多艺的树莓派 ~
 alsamixer
 ```
 
+{% hint style="info" %}
+Advanced Linux Sound Architecture
+{% endhint %}
+
+### 命令行播放音频
+
+```bash
+omxplayer
+```
+
+{% hint style="info" %}
+**OpenMAX** \(Open Media Acceleration\), often shortened as "**OMX**"
+{% endhint %}
+
 到这里,已经四月份了,北京的春天和江城武汉的春天有着各不相同的韵味,希望能多出去走走
 
 ![&#x56DB;&#x8C0E;&#x8FD8;&#x662F;&#x90A3;&#x4E48;&#x7684;&#x8BA9;&#x4EBA;&#x6000;&#x5FF5;&#x554A;](.gitbook/assets/200005.jpg)
