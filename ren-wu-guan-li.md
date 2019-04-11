@@ -4,6 +4,12 @@ description: 可视化cron    crontab-ui
 
 # Cron 任务管理
 
+{% hint style="info" %}
+这个并不推荐使用,由于crontab-ui功能存在诸多缺憾\(我也是使用之后才发现的\);
+
+不过用来参考在raspberry pi上配置 nodejs 环境还是一篇不错的文档可供参考
+{% endhint %}
+
 我们希望能够有个方便的办法清晰地看到树莓派上运行的各种定时任务，为了后续各种脚本的持续追踪运行情况，排除了php相关项目，我们选定了开源的 [**crontab-ui**](https://github.com/alseambusher/crontab-ui)\*\*\*\*
 
 ## 准备工作
