@@ -21,6 +21,8 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 其中 Realtek Semiconductor Corp 便是刚插上的外置网卡
 
+用不了,退了,安装不上驱动.
+
 ## Network Manager 安装
 
 ```bash
