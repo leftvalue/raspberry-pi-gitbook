@@ -23,6 +23,14 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 用不了,退了,安装不上驱动.
 
+又买了一个 EDUP EP-N8508_GS_ 
+
+![](.gitbook/assets/wx20190411-204741-2x.png)
+
+倒是可以插上后直接识别设备了,但是不支持无线ap模式,又退了
+
+多么痛的领悟~
+
 ## Network Manager 安装
 
 ```bash
