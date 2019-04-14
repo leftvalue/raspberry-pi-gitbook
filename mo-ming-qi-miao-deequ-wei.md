@@ -41,8 +41,41 @@ WantedBy=multi-user.target
 {% endcode-tabs %}
 
 ```bash
-sudo systemctl start  startupmusic.service
 sudo systemctl enable  startupmusic.service
+sudo systemctl start  startupmusic.service
+```
+
+## 关机音乐
+
+{% embed url="https://unix.stackexchange.com/questions/39226/how-to-run-a-script-with-systemd-right-before-shutdown" %}
+
+```bash
+wget 'https://github.com/leftvalue/pypi/raw/master/windows开关机音效/windows-xp-shutdown.mp3' -O '/home/pi/.music/shutdown.mp3'
+/usr/bin/omxplayer /home/pi/.music/shutdown.mp3
+cd /usr/lib/systemd/system/
+sudo touch shutdownmusic.service
+```
+
+{% code-tabs %}
+{% code-tabs-item title="/usr/lib/systemd/system/shutdownmusic.service" %}
+```bash
+[Unit]
+Description=play-windows-shut-down-music
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+ExecStop=/usr/bin/omxplayer /home/pi/.music/shutdown.mp3
+
+[Install]
+WantedBy=multi-user.target
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+```bash
+sudo systemctl enable  shutdownmusic.service
+sudo systemctl start  shutdownmusic.service
 ```
 
 ## 全局语音服务脚本
@@ -182,4 +215,12 @@ fi
 {% hint style="info" %}
 这里吧比较容易纠结,如果断网就发消息或者广播,太烦人了,所以暂时的方案是在白天进行检查,同时,控制cron任务的频率
 {% endhint %}
+
+### 后记
+
+在找开机/关机音效的时候发现了一个蛮不错的网站
+
+{% embed url="https://www.soundsnap.com/search/audio/cat/score" %}
+
+可以搜一些音效片段,挺有意思,mark了
 
