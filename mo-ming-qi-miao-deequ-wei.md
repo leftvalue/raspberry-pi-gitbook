@@ -9,6 +9,7 @@ description: 杂七杂八的便捷脚本汇总
 {% embed url="https://www.winhistory.de/more/winstart/winstart.htm.en" caption="这里可以找到windows所有版本的开机音乐" %}
 
 ```bash
+# 下面,我们来给树莓派添加一下windows10的经典开机音乐
 cd ~
 mkdir .music && cd "$_"
 wget 'https://www.winhistory.de/more/winstart/mp3/vista.mp3' -O /home/pi/.music/vista.mp3
