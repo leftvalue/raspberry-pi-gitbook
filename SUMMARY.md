@@ -13,4 +13,5 @@
 * [多媒体基础](duo-mei-ti-ji-chu.md)
 * [Cron 任务管理](ren-wu-guan-li.md)
 * [网络相关](wang-luo-xiang-guan.md)
+* [莫名其妙的恶趣味](mo-ming-qi-miao-deequ-wei.md)
 
