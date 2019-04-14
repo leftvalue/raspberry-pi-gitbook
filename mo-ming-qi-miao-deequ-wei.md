@@ -166,6 +166,15 @@ if __name__ == '__main__':
         logger.info('use cache music at %s' % music_path)
     song = AudioSegment.from_mp3(music_path)
     play(song)
+```
 
+## 网络检查
+
+```bash
+if ping -q -c 1 -W 1 8.8.8.8 >/dev/null; then
+  echo "Network is ok"
+else
+  say --text '断网了'
+fi
 ```
 
