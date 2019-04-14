@@ -52,6 +52,7 @@ sudo su
 sudo apt-get install perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl apt-show-versions
 wget http://prdownloads.sourceforge.net/webadmin/webmin_1.890_all.deb
 sudo dpkg --install webmin_1.890_all.deb
+sudo /etc/init.d/webmin restart # 先启动一遍,才能找到后面需要修改的配置文件
 
 # https://192.168.199.200:10000
 vi /etc/webmin/miniserv.conf
