@@ -142,7 +142,55 @@ server {
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
+## 面向外网进行端口转发到 NGINX 服务
 
+{% code-tabs %}
+{% code-tabs-item title="/etc/nginx/nginx.conf" %}
+```text
+user www-data;
+worker_processes auto;
+pid /run/nginx.pid;
+include /etc/nginx/modules-enabled/*.conf;
+events {
+    worker_connections 768;
+}
+http {
+    keepalive_timeout 65;
+    server {
+        listen 8888;
+        server_name *.yourname.com;
+        if ($http_host ~* "^(.*?)\.yourdomain\.com:8888$") {
+#正则表达式
+            set $domain $1;
+        }
+        location / {
+            if ($domain ~* "^\d*$") {
+                proxy_pass http://127.0.0.1:$domain;
+            }
+			tcp_nodelay on;
+			proxy_set_header Host            $host;
+			proxy_set_header X-Real-IP       $remote_addr;
+			proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        }
+    }
+    server {
+        listen 8080;
+        server_name localhost;
+        location / {
+#root   html;
+#index  index.html index.htm;
+            add_header Content-Type 'text/plain; charset=utf-8';
+            return 200 "你今天真好看呀 :)";
+        }
+    }
+    access_log /var/log/nginx/access.log;
+    error_log /var/log/nginx/error.log;
+    gzip on;
+}
+
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 
 
