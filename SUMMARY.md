@@ -16,4 +16,5 @@
 * [莫名其妙的趣味](mo-ming-qi-miao-deequ-wei.md)
 * [Raspberrypi Docker 相关](raspberrypi-docker-xiang-guan.md)
 * [raspberryPi 文件同步/增删](ben-di-yu-raspberrypi-wen-jian-tong-bu-samba-an-zhuang.md)
+* [搭设内网 dns 服务器来去广告  Pi-hole](da-she-nei-wang-dns-fu-wu-qi-lai-qu-guang-gao-pihole.md)
 
