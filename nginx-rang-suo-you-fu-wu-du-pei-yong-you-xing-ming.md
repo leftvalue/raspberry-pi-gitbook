@@ -158,6 +158,8 @@ http {
     keepalive_timeout 65;
     server {
         listen 8888;
+# 外网上传下载文件,突破默认大小限制
+        client_max_body_size 5000m;
         server_name *.yourname.com;
         if ($http_host ~* "^(.*?)\.yourdomain\.com:8888$") {
 #正则表达式
@@ -191,6 +193,31 @@ http {
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
+
+如果配上面的接口,在路由器\(假设IP 为 router\_ip \)配置了 8888  端口转发到 搭了上面 nginx 配置的树莓派 ip\( raspberry\_ip \)的8888 
+
+```text
+router_ip:8888 -> raspberry_ip:8888
+```
+
+同时满足我们设置了
+
+```text
+*.domain.com -> router_ip
+```
+
+这样的一条 A 记录 ddns
+
+那么, 树莓派上的某端口\(如9000\)可用如下方式访问
+
+* raspberry\_ip:9000
+* 9000.domain.com:8888
+
+其中 _**9000.domain.com:8888**_ 便是我们想要强调的,通过一个 nginx 来使分配了端口转发的子域名拥有二次端口转发的灵活性,同时不需要单独配置新的端口转发规则.
+
+{% hint style="info" %}
+注意,这样相当于把树莓派的所有端口都对外网暴露了,必须严格控制访问权限,否则有严重安全风险
+{% endhint %}
 
 
 
