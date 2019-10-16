@@ -15,5 +15,5 @@
 * [网络相关](wang-luo-xiang-guan.md)
 * [莫名其妙的趣味](mo-ming-qi-miao-deequ-wei.md)
 * [Raspberrypi Docker 相关](raspberrypi-docker-xiang-guan.md)
-* [本地与raspberryPi 文件同步-Samba 安装](ben-di-yu-raspberrypi-wen-jian-tong-bu-samba-an-zhuang.md)
+* [raspberryPi 文件同步/增删](ben-di-yu-raspberrypi-wen-jian-tong-bu-samba-an-zhuang.md)
 
