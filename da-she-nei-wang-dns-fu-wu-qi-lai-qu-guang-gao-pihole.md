@@ -40,6 +40,19 @@ pihole -a -r outerdomain.com
 pihole -a -r
 ```
 
+{% embed url="https://github.com/neoFelhz/neohosts" caption="一个比较好用的黑名单" %}
+
+```text
+https://github.com/neoFelhz/neohosts
+```
+
+{% embed url="https://github.com/Diumo/ADhosts/blob/master/README.md" %}
+
+```text
+# 几个黑名单合集
+https://github.com/Diumo/ADhosts/blob/master/README.md
+```
+
 
 
 
