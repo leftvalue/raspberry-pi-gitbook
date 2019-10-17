@@ -31,6 +31,10 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 多么痛的领悟~
 
+又买了一个 EW-7811UN  ,插上即用,ifconfig 和 lsusb 都可以找到,默认无法开启 ap 模式,因为 hostpad 缺乏对应的网卡驱动
+
+{% embed url="https://jenssegers.com/43/Realtek-RTL8188-based-access-point-on-Raspberry-Pi" caption="参照这个链接卸载\(如果已经安装过了hostpad\)之后重新手动编译hostpad" %}
+
 ## Network Manager 安装
 
 ```bash
