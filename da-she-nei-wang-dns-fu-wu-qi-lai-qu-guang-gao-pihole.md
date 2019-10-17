@@ -10,6 +10,28 @@
 
 {% embed url="https://pi-hole.net/" caption="搭建等信息见官网" %}
 
+### pihole 存在无法卸载完全的问题,建议安装在 docker 里方便维护
+
+```bash
+docker run -d \
+    --name pihole \
+    -p 53:53/tcp -p 53:53/udp \
+    -p 80:80 \
+    -p 443:443 \
+    -e TZ="Asia/Chongqing" \
+    -v "$(pwd)/etc-pihole/:/etc/pihole/" \
+    -v "$(pwd)/etc-dnsmasq.d/:/etc/dnsmasq.d/" \
+    --dns=127.0.0.1 --dns=1.1.1.1 \
+    --restart=unless-stopped \
+    pihole/pihole:latest
+
+# 这样安装的 pihole 情况下,
+docker exec -it pihole_container_name pihole -a -p # 这样来改密码
+#其中 pihole_container 为前面指定的 pihole container 的名称(pihole)
+# 后面的pihole 命令统一替换成
+docker exec -it pihole_container_name pihole
+```
+
 ```bash
 # 初次安装成功后会告诉你默认密码,为了防止记不住,建议给改了
 sudo pihole -a -p yournewpassword
