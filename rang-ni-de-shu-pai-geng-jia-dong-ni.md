@@ -17,7 +17,7 @@ sudo raspi-config
 
 ![&#x6811;&#x8393;&#x6D3E;&#x7684;&#x7B2C;&#x4E00;&#x9762;](.gitbook/assets/wei-ming-ming-2.png)
 
-## 更新软件源
+## 更新软件源（最新系统不需要此步，系统会在 apt-get 时自动选择访问较快的源）
 
 > 特别鸣谢 [https://mirror.tuna.tsinghua.edu.cn/help/raspbian/](https://mirror.tuna.tsinghua.edu.cn/help/raspbian/)
 
