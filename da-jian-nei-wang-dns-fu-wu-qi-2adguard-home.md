@@ -2,11 +2,17 @@
 
 {% embed url="https://adguard.com/en/adguard-home/overview.html" caption="官网" %}
 
- 作为pi-hole 的有效竞品,而且是商业公司维护的,对个人免费开源使用,对我来说吸引力还是很大的
+ 作为pi-hole 的有效竞品,而且是商业公司维护的,对个人免费开源使用,对我来说吸引力还是很大的.
+
+> [https://hub.docker.com/r/adguard/adguardhome](https://hub.docker.com/r/adguard/adguardhome)
 
 ```bash
 sudo docker run --name adguardhome -v /etc/adguardhome/work:/opt/adguardhome/work -v /etc/adguardhome/confdir:/opt/adguardhome/conf -p 53:53/tcp -p 53:53/udp  -p 80:80/tcp -p 443:443/tcp -p 853:853/tcp -p 3000:3000/tcp -d adguard/adguardhome:armhf-latest
 ```
+
+{% hint style="info" %}
+docker 仓库页提供的启动命令包含68 和67端口,如果不打算用 Adguard Home 进行 DHCP,大可以不启用  '-p 67:67/udp -p 68:68/tcp -p 68:68/udp'
+{% endhint %}
 
 安装之后访问3000端口进行初始化配置,**初始化配置完成后3000端口将不再可用,使用80端口管理后台**
 
