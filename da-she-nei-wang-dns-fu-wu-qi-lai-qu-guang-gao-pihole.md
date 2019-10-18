@@ -1,3 +1,7 @@
+---
+description: '@Deprecated pi-hole 有稳定性问题,dns 服务器经常失去相应,决定弃了投 Adguard-Home,详见下篇文章'
+---
+
 # 搭设内网 dns 服务器来去广告  Pi-hole
 
 {% hint style="info" %}
