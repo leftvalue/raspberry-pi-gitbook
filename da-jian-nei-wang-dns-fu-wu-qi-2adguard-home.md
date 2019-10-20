@@ -7,7 +7,7 @@
 > [https://hub.docker.com/r/adguard/adguardhome](https://hub.docker.com/r/adguard/adguardhome)
 
 ```bash
-sudo docker run --name adguardhome -v /etc/adguardhome/work:/opt/adguardhome/work -v /etc/adguardhome/confdir:/opt/adguardhome/conf -p 53:53/tcp -p 53:53/udp  -p 80:80/tcp -p 443:443/tcp -p 853:853/tcp -p 3000:3000/tcp -d adguard/adguardhome:armhf-latest
+sudo docker run --name adguardhome --restart=always -v /etc/adguardhome/work:/opt/adguardhome/work -v /etc/adguardhome/confdir:/opt/adguardhome/conf -p 53:53/tcp -p 53:53/udp  -p 80:80/tcp -p 443:443/tcp -p 853:853/tcp -p 3000:3000/tcp -d adguard/adguardhome:armhf-latest
 ```
 
 {% hint style="info" %}
