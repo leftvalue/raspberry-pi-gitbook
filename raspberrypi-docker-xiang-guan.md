@@ -55,3 +55,32 @@ WARNING: Adding a user to the "docker" group will grant the ability to run
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
+### 关于重启后 docker 容器能重新启动
+
+为了重新启动树莓派/重启 docker 后能自动启动容器,docker run 时记得加上
+
+```bash
+--restart=always
+```
+
+如果已经创建完了,忘了加上面的,可以用下面的方式补救
+
+```text
+docker container update --restart=always 容器名字
+```
+
+或者
+
+```bash
+docker  update --restart=always 容器id
+```
+
+修改成功后可以重启 docker 进行测试
+
+```bash
+/etc/init.d/docker restart
+Usage: service docker {start|stop|restart|status
+# /etc/init.d/docker
+# Usage: service docker {start|stop|restart|status}
+```
+
