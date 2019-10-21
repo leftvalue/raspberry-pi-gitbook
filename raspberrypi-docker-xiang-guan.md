@@ -55,6 +55,14 @@ WARNING: Adding a user to the "docker" group will grant the ability to run
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
+就像上面讲的那样
+
+```bash
+sudo usermod -aG docker pi
+```
+
+执行这句可以让以后使用 docker 不需要 root 权限
+
 ### 关于重启后 docker 容器能重新启动
 
 为了重新启动树莓派/重启 docker 后能自动启动容器,docker run 时记得加上
