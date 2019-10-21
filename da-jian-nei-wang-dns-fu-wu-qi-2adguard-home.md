@@ -10,6 +10,14 @@
 sudo docker run --name adguardhome --restart=always -v /etc/adguardhome/work:/opt/adguardhome/work -v /etc/adguardhome/confdir:/opt/adguardhome/conf -p 53:53/tcp -p 53:53/udp  -p 80:80/tcp -p 443:443/tcp -p 853:853/tcp -p 3000:3000/tcp -d adguard/adguardhome:armhf-latest
 ```
 
+安装完成后记得更改当前树莓派的 dns
+
+```bash
+sudo vim /etc/resolv.conf
+# 最后一行更改为
+# nameserver 127.0.0.1
+```
+
 {% hint style="info" %}
 docker 仓库页提供的启动命令包含68 和67端口,如果不打算用 Adguard Home 进行 DHCP,大可以不启用  '-p 67:67/udp -p 68:68/tcp -p 68:68/udp'
 {% endhint %}
