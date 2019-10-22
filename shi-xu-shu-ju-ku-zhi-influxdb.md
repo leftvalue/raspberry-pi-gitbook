@@ -15,6 +15,6 @@ sudo docker run -d --volume=/home/pi/influxdb/data:/data --name influxdb -p 8086
 {% endhint %}
 
 ```bash
-sudo docker run -d --name=grafana -p 3000:3000 grafana/grafana
+sudo docker run -d --name=grafana -p 3000:3000 --restart=always grafana/grafana-arm32v7-linux:dev-musl
 ```
 
