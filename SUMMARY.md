@@ -18,4 +18,5 @@
 * [raspberryPi 文件同步/增删](ben-di-yu-raspberrypi-wen-jian-tong-bu-samba-an-zhuang.md)
 * [搭设内网 dns 服务器来去广告  Pi-hole](da-she-nei-wang-dns-fu-wu-qi-lai-qu-guang-gao-pihole.md)
 * [搭建内网 dns 服务器\(2\)-Adguard Home](da-jian-nei-wang-dns-fu-wu-qi-2adguard-home.md)
+* [DDNS dockers](ddns-dockers.md)
 
