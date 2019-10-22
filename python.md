@@ -18,6 +18,12 @@ sudo apt-get install libjpeg8-dev zlib1g-dev  liblcms2-dev libwebp-dev tcl8.5-de
 sudo apt-get install python3-pip
 ```
 
+也没有 virtualenv
+
+```bash
+sudo apt-get install python3-venv
+```
+
 ### 换源提高 pip 下载速度
 
 ```bash
