@@ -18,3 +18,13 @@ sudo docker run -d --volume=/home/pi/influxdb/data:/data --name influxdb -p 8086
 sudo docker run -d --name=grafana -p 3000:3000 --restart=always grafana/grafana-arm32v7-linux:dev-musl
 ```
 
+## 组网
+
+为了让docker 里的 influxdb 和 grafana 能够互相通讯,我们需要对他们进行组网,docker 1.9以上推荐使用 Docker Networking
+
+```bash
+sudo docker network create app
+sudo docker network connect --alias influxdb app influxdb
+sudo docker network connect --alias grafana app grafana
+```
+
