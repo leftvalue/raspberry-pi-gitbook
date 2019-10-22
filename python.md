@@ -12,6 +12,25 @@ description: 零散记录
 sudo apt-get install libjpeg8-dev zlib1g-dev  liblcms2-dev libwebp-dev tcl8.5-dev tk8.5-dev
 ```
 
+### 自带的 python3 没有 pip3
+
+```bash
+sudo apt-get install python3-pip
+```
+
+### 换源提高 pip 下载速度
+
+```bash
+cd ~
+mkdir .pip
+touch pip.conf
+sudo chmod 755 pip.conf
+vim pip.conf
+#[global]
+#timeout = 6000
+#index-url = https://mirrors.aliyun.com/pypi/simple
+```
+
 ## 安装 python 3.7.4 
 
 {% embed url="https://gist.github.com/SeppPenner/6a5a30ebc8f79936fa136c524417761d" %}
