@@ -19,4 +19,5 @@
 * [搭设内网 dns 服务器来去广告  Pi-hole](da-she-nei-wang-dns-fu-wu-qi-lai-qu-guang-gao-pihole.md)
 * [搭建内网 dns 服务器\(2\)-Adguard Home](da-jian-nei-wang-dns-fu-wu-qi-2adguard-home.md)
 * [DDNS dockers](ddns-dockers.md)
+* [Mysql on Raspberry-pi](mysql-on-raspberry-pi.md)
 
