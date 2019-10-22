@@ -15,8 +15,10 @@ sudo docker run -d --volume=/home/pi/influxdb/data:/data --name influxdb -p 8086
 {% endhint %}
 
 ```bash
-sudo docker run -d --name=grafana -p 3000:3000 --restart=always grafana/grafana-arm32v7-linux:dev-musl
+sudo docker run -d --name=grafana -p 4000:3000 --restart=always grafana/grafana-arm32v7-linux:dev-musl
 ```
+
+默认用户名 admin 密码 admin ,第一次登录后会提示进行修改
 
 ## 组网
 
