@@ -20,5 +20,5 @@
 * [搭建内网 dns 服务器\(2\)-Adguard Home](da-jian-nei-wang-dns-fu-wu-qi-2adguard-home.md)
 * [DDNS dockers](ddns-dockers.md)
 * [Mysql on Raspberry-pi](mysql-on-raspberry-pi.md)
-* [时序数据库之 influxDb](shi-xu-shu-ju-ku-zhi-influxdb.md)
+* [时序数据库之 influxDb & 它的好搭档 Grafana](shi-xu-shu-ju-ku-zhi-influxdb.md)
 
