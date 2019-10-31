@@ -12,6 +12,12 @@ description: 得到一个干净的系统和英雄的起源
 * [ ] [https://www.raspberrypi.org/downloads/raspbian/](https://www.raspberrypi.org/downloads/raspbian/) 下载官方镜像 zip
 * [ ] [https://www.balena.io/etcher/](https://www.balena.io/etcher/) 下载 Etcher 系统刻录工具
 
+{% hint style="info" %}
+初学者建议使用 "Raspbian Buster with desktop and recommended software" 版本镜像,可以省去不少麻烦,自带桌面
+
+对linux 有基础者建议使用 "Raspbian Buster Lite-Minimal image based on Debian Buster"镜像,更小并且更稳定,日常系统占用更低
+{% endhint %}
+
 ## 刻录系统
 
 ![](.gitbook/assets/steps-8006dca57323756b1b84fb9408742409.gif)
