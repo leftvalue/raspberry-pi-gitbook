@@ -160,7 +160,7 @@ http {
         listen 8888;
 # 外网上传下载文件,突破默认大小限制
         client_max_body_size 5000m;
-        server_name *.yourname.com;
+        server_name *.yourdomain.com;
         if ($http_host ~* "^(.*?)\.yourdomain\.com:8888$") {
 #正则表达式
             set $domain $1;
