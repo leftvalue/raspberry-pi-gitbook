@@ -219,5 +219,30 @@ router_ip:8888 -> raspberry_ip:8888
 注意,这样相当于把树莓派的所有端口都对外网暴露了,必须严格控制访问权限,否则有严重安全风险
 {% endhint %}
 
+### NGINX 转发 SSH
+
+上面我们说到,通过 nginx 可实现只用一个端口实现多个端口的对外转发,但是有一个问题在于上面我们的配置不能用于 ssh 连接的转发,参阅下面的文档
+
+{% embed url="http://nginx.org/en/docs/stream/ngx\_stream\_core\_module.html" %}
+
+笔者发现树莓派上通过 apt-get 安装的 nginx 其实已经带了 stream 模块了,不需要重新编译
+
+```text
+stream{
+    upstream machine1{
+        server 127.0.0.1:22;       #内网服务器102，端口为sshd默认的22
+    }
+
+    server {
+        listen 2333;
+        proxy_connect_timeout 1h;
+        proxy_timeout 1h;
+        proxy_pass machine1;            #转向内网服务器101
+    }
+}
+```
+
+stream 区块放在与 http 区块平级的位置即可.
+
 
 
