@@ -18,8 +18,8 @@ cd /usr/lib/systemd/system/
 sudo touch startupmusic.service
 ```
 
-{% code-tabs %}
-{% code-tabs-item title="/usr/lib/systemd/system/startupmusic.service" %}
+{% tabs %}
+{% tab title="/usr/lib/systemd/system/startupmusic.service" %}
 ```bash
 [Unit]
 Description= start-up-music-service
@@ -37,8 +37,8 @@ Restart=oneshot
 [Install]
 WantedBy=multi-user.target
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 ```bash
 sudo systemctl enable  startupmusic.service
@@ -56,8 +56,8 @@ cd /usr/lib/systemd/system/
 sudo touch shutdownmusic.service
 ```
 
-{% code-tabs %}
-{% code-tabs-item title="/usr/lib/systemd/system/shutdownmusic.service" %}
+{% tabs %}
+{% tab title="/usr/lib/systemd/system/shutdownmusic.service" %}
 ```bash
 [Unit]
 Description=play-windows-shut-down-music
@@ -70,8 +70,8 @@ ExecStop=/usr/bin/omxplayer /home/pi/.music/shutdown.mp3
 [Install]
 WantedBy=multi-user.target
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 ```bash
 sudo systemctl enable  shutdownmusic.service

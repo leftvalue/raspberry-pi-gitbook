@@ -47,8 +47,8 @@ sudo /bin/systemctl restart grafana-server
 sudo vi /etc/nginx/conf.d/global.conf
 ```
 
-{% code-tabs %}
-{% code-tabs-item title="/etc/nginx/conf.d/global.conf" %}
+{% tabs %}
+{% tab title="/etc/nginx/conf.d/global.conf" %}
 ```text
 server {
     listen 80;
@@ -60,8 +60,8 @@ server {
     }
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 reload 配置文件 
 
@@ -90,8 +90,8 @@ sudo /etc/init.d/webmin restart
 
 添加到前述的 `/etc/nginx/conf.d/global.conf` 
 
-{% code-tabs %}
-{% code-tabs-item title="/etc/nginx/conf.d/global.conf" %}
+{% tabs %}
+{% tab title="/etc/nginx/conf.d/global.conf" %}
 ```text
 location /webmin/{
     # 为了能够upload文件,解决 413 Request Entity Too Large
@@ -102,8 +102,8 @@ location /webmin/{
     proxy_set_header Host $host;
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 reload 配置文件 
 
@@ -115,8 +115,8 @@ sudo /etc/init.d/nginx reload
 
 ## Nginx 个人配置文件 \( 持续更新中 ... \)
 
-{% code-tabs %}
-{% code-tabs-item title="/etc/nginx/conf.d/global.conf" %}
+{% tabs %}
+{% tab title="/etc/nginx/conf.d/global.conf" %}
 ```text
 server {
 	listen       80;
@@ -139,13 +139,13 @@ server {
 
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 ## 面向外网进行端口转发到 NGINX 服务
 
-{% code-tabs %}
-{% code-tabs-item title="/etc/nginx/nginx.conf" %}
+{% tabs %}
+{% tab title="/etc/nginx/nginx.conf" %}
 ```text
 user www-data;
 worker_processes auto;
@@ -191,8 +191,8 @@ http {
 }
 
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 如果配上面的接口,在路由器\(假设IP 为 router\_ip \)配置了 8888  端口转发到 搭了上面 nginx 配置的树莓派 ip\( raspberry\_ip \)的8888 
 

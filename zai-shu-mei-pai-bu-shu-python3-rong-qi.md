@@ -6,8 +6,8 @@
 
 官方镜像库已经写的很完备了,下面是一个简单的 flask server 例子
 
-{% code-tabs %}
-{% code-tabs-item title="Dockerfile" %}
+{% tabs %}
+{% tab title="Dockerfile" %}
 ```text
 FROM python:3.7-slim-stretch
 WORKDIR /usr/src/app
@@ -17,22 +17,22 @@ COPY . .
 EXPOSE 8089
 CMD [ "python", "./app.py" ]
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
-{% code-tabs %}
-{% code-tabs-item title="requirements.txt" %}
+{% tabs %}
+{% tab title="requirements.txt" %}
 ```text
 requests
 Flask
 tornado
 beautifulsoup4
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
-{% code-tabs %}
-{% code-tabs-item title="app.py" %}
+{% tabs %}
+{% tab title="app.py" %}
 ```python
 # _*_ coding=utf-8 _*_
 from flask import Flask
@@ -70,8 +70,8 @@ http_server = HTTPServer(WSGIContainer(app))
 http_server.listen(8089)
 IOLoop.instance().start()
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 上面三个文件放在同一目录下,执行
 

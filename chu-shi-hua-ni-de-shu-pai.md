@@ -35,8 +35,8 @@ touch ssh # 为了允许树莓派 ssh 登录
 
 更多详细用法参照 [https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md](https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md)
 
-{% code-tabs %}
-{% code-tabs-item title="wpa\_supplicant.conf" %}
+{% tabs %}
+{% tab title="wpa\_supplicant.conf" %}
 ```bash
 country=CN
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
@@ -56,8 +56,8 @@ network={
     id_str="myAndroid"
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 可以把 tf 卡插到树莓派上并接通电源了
 

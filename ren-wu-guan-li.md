@@ -57,17 +57,17 @@ sudo HOST=0.0.0.0 PORT=9000 crontab-ui --autosave
 
 添加下面文件
 
-{% code-tabs %}
-{% code-tabs-item title="/usr/local/bin/crontab-ui.sh" %}
+{% tabs %}
+{% tab title="/usr/local/bin/crontab-ui.sh" %}
 ```bash
 #!/bin/bash
 sudo HOST=0.0.0.0 PORT=9000 /usr/local/bin/crontab-ui ----autosave
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
-{% code-tabs %}
-{% code-tabs-item title="/usr/lib/systemd/system/crontabui.service" %}
+{% tabs %}
+{% tab title="/usr/lib/systemd/system/crontabui.service" %}
 ```bash
 [Unit]
 Description= crontab-ui
@@ -85,8 +85,8 @@ Restart=always
 [Install]
 WantedBy=multi-user.target
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 允许并启动服务
 
@@ -100,8 +100,8 @@ sudo systemctl start crontabui
 
 添加
 
-{% code-tabs %}
-{% code-tabs-item title="/etc/nginx/conf.d/global.conf" %}
+{% tabs %}
+{% tab title="/etc/nginx/conf.d/global.conf" %}
 ```bash
 location /crontab/ {
 		proxy_pass http://127.0.0.1:9000/;
@@ -109,8 +109,8 @@ location /crontab/ {
     		proxy_set_header Host $host;
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 另外，项目有资源是绝对路径的，没法配置，github上的 merge 还没合并，所以
 
@@ -122,8 +122,8 @@ sudo wget 'http://localhost:9000/fonts/glyphicons-halflings-regular.woff2'
 
 美中不足，项目并没有进行用户身份校验，如果通过端口转发允许外网访问，无疑很危险，所以通过 Nginx 进行权限校验设置。修改后相关 Nginx 配置如下
 
-{% code-tabs %}
-{% code-tabs-item title="/etc/nginx/conf.d/global.conf" %}
+{% tabs %}
+{% tab title="/etc/nginx/conf.d/global.conf" %}
 ```bash
 location /crontab/ {
 		    auth_basic           "Crontab-UI";
@@ -133,8 +133,8 @@ location /crontab/ {
     		proxy_set_header Host $host;
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 同时添加
 
@@ -158,8 +158,8 @@ root:加密的密码
 
 一个折中但并不优雅的解决方案\(因为 crontab-ui 的日志地址为 [http://host:port/logger?id=](http://192.168.199.200:9000/logger?id=2vDdZaJCzCUKLQIH) \)
 
-{% code-tabs %}
-{% code-tabs-item title="/etc/nginx/conf.d/global.conf" %}
+{% tabs %}
+{% tab title="/etc/nginx/conf.d/global.conf" %}
 ```bash
 location /logger{
 		proxy_pass http://127.0.0.1:9000;
@@ -177,8 +177,8 @@ location /remove{
 		proxy_pass http://127.0.0.1:9000;
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 
 
@@ -186,13 +186,13 @@ location /remove{
 
 在调试复杂的 nginx 代理转发时,一个小技巧是在 nginx 中设置
 
-{% code-tabs %}
-{% code-tabs-item title="/etc/nginx/nginx.conf" %}
+{% tabs %}
+{% tab title="/etc/nginx/nginx.conf" %}
 ```bash
 rewrite_log on;
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 这样在 `error.log` 中就可以看到 `404` 的报错请求的实际转发地址了
 

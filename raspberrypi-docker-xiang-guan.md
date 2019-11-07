@@ -36,8 +36,8 @@ sudo apt-get upgrade
 sudo docker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock --restart always --name portainer portainer/portainer -H unix:///var/run/docker.sock
 ```
 
-{% code-tabs %}
-{% code-tabs-item title="安装成功的输出\(节选最后\)" %}
+{% tabs %}
+{% tab title="安装成功的输出\(节选最后\)" %}
 ```bash
 If you would like to use Docker as a non-root user, you should now consider
 adding your user to the "docker" group with something like:
@@ -52,8 +52,8 @@ WARNING: Adding a user to the "docker" group will grant the ability to run
          Refer to https://docs.docker.com/engine/security/security/#docker-daemon-attack-surface
          for more information.
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 就像上面讲的那样
 
