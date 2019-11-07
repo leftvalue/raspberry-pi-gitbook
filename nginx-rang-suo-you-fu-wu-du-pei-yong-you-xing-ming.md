@@ -244,5 +244,26 @@ stream{
 
 stream 区块放在与 http 区块平级的位置即可.
 
+### 为你的 vim 添加 nginx 配置文件高亮
+
+相信前面对着窗口改配置文件确实够头疼,而且颜色不易区分,
+
+{% embed url="https://gist.github.com/ralavay/c4c7750795ccfd72c2db" %}
+
+参照上面给出的代码可给你的 vim 插上 nginx 彩色的翅膀\(逃
+
+```bash
+# 这里和上面是一样的,防止上面链接内容加载不出来所以在这里备份一下
+mkdir -p ~/.vim/syntax/
+wget http://www.vim.org/scripts/download_script.php?src_id=19394 -O ~/.vim/syntax/nginx.vim
+
+# Set location of Nginx config file
+cat > ~/.vim/filetype.vim <<EOF
+au BufRead,BufNewFile /etc/nginx/*,/etc/nginx/conf.d/*,/usr/local/nginx/conf/* if &ft == '' | setfiletype nginx | endif
+EOF
+```
+
+
+
 
 
